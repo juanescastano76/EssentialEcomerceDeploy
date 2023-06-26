@@ -10,10 +10,11 @@ function Slider() {
   const [isOpenRedSweet, setIsOpenRedSweet] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const images = [
-    "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-    "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    "https://www.datocms-assets.com/52824/1669079241-220309_cookies_adiosmf_indoor_latestage-1.jpg?auto=format&fit=clip&w=1000&w=3840",
+    "https://www.datocms-assets.com/52824/1669079241-220309_cookies_adiosmf_indoor_latestage-1.jpg?auto=format&fit=clip&w=1000&w=3840",
+    "https://www.datocms-assets.com/52824/1669079241-220309_cookies_adiosmf_indoor_latestage-1.jpg?auto=format&fit=clip&w=1000&w=3840",
   ];
+  const secondImg = ["/my-project/public/images/cogolloPrueba.jpg"];
 
   const redHotProperties = () => {
     return (
@@ -157,7 +158,7 @@ function Slider() {
         >
           <div
             style={{ backgroundImage: `url(${images[0]})` }}
-            className=" h-screen bg-cover"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:30%_60%]"
           >
             {isOpenRed ? (
               <div className=" flex justify-center items-center h-full p-10">
@@ -182,7 +183,7 @@ function Slider() {
         >
           <div
             style={{ backgroundImage: `url(${images[1]})` }}
-            className="h-screen bg-cover"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:30%_60%]"
           >
             {isOpenSweet ? (
               <div className=" flex justify-center items-center h-full p-10">
@@ -200,7 +201,7 @@ function Slider() {
         <div className="each-slide-effect">
           <div
             style={{ backgroundImage: `url(${images[2]})` }}
-            className="h-screen bg-cover"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:30%_60%]"
             onClick={() => {
               if (isOpenRedSweet === true) {
                 setIsOpenRedSweet(false);

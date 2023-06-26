@@ -34,7 +34,7 @@ function ProductsHomepage() {
     width: "20px",
     background: "none",
     border: "0px",
-    margin: "10px",
+    margin: "20px",
   };
 
   const properties = {
@@ -64,28 +64,32 @@ function ProductsHomepage() {
 
   return (
     <Slide {...properties}>
-      <div className="mt-20 text-white border-y-[1px] py-5 border-white">
+      <div className="mt-20 text-white border-y-[1px] py-5 border-white ">
         <h4 className="text-s font-bold text-center"> PRODUCTOS DESTACADOS</h4>
         <h3 className="text-2xl font-bold text-center mt-2 mb-2">
           Vaporizador extremo{" "}
         </h3>
-        <div className="">
+        <div className="lg:w-[70vw] lg:mx-auto lg:flex lg:justify-center lg:gap-0 lg:mt-10 border-2 border-green-500">
           {/* Aside */}
-          <Image
-            src="/images/essentialgotero.jpeg"
-            width={300}
-            height={300}
-            alt="vaporizador"
-            className="mx-auto"
-          />
-          <div className="mx-auto border-2 border-black w-4/5 mt-3">
+          <div className="border-2 border-green-500 lg:flex">
+            <Image
+              src="/images/essentialgotero.jpeg"
+              width={300}
+              height={300}
+              alt="vaporizador"
+              className="mx-auto lg:flex"
+            />
+          </div>
+          <div className="mx-auto  w-4/5 mt-3  lg:items-center lg:h-40 lg:m-auto lg:mt-20 ">
             {/* text */}
-            <p className="text-start">
+            <p className="lg:flex lg:items-center lg:h-full border-2 border-green-500">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
               aliquid nemo assumenda asperiores odit repudiandae sapiente
               aliquam accusantium eius perspiciatis.
             </p>
-            <AddToCartBtn />
+            <div className="lg:flex lg:ml-10 ">
+              <AddToCartBtn />
+            </div>
           </div>
         </div>
       </div>

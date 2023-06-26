@@ -22,22 +22,38 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navbarOpen = () => {};
   return (
-    <div className="fixed top-0 z-[500] w-[100%]  bg-black text-white overflow-y-hidden">
+    <div className="fixed top-0 z-[500] w-[100%]  bg-black text-white overflow-y-hidden  ">
       {!isOpen ? (
-        <nav className="flex h-24">
-          <ul className="">
-            <li className="w-full">
+        <nav className="flex h-24 lg:flex justify-between lg:w-[80vw] m-auto ">
+          <ul className="flex items-center">
+            <li className="">
               <Image
                 src="/images/blanco.png"
                 width={180}
                 height={200}
                 alt="logo"
-                className="h-full w-full"
+                className="h-full w-full  lg:w-52"
               />
             </li>
           </ul>
 
-          <ul className=" flex justify-end w-full">
+          <ul className="hidden lg:flex lg:items-center lg:justify-around ">
+            <li className="  flex gap-5 justify-between w-full">
+              {links.map(({ label, route }) => {
+                return (
+                  <div className="flex justify-center m-10">
+                    <li key={label} className=" ">
+                      <Link href={route} className="">
+                        {label}
+                      </Link>
+                    </li>
+                  </div>
+                );
+              })}
+            </li>
+          </ul>
+
+          <ul className=" flex justify-end w-full lg:w-52">
             <li className="flex justify-end w-fit  gap-2">
               <Image
                 src="/images\shopping-cart-outline-svgrepo-com.svg"
@@ -52,7 +68,7 @@ function Navbar() {
                 width={30}
                 height={30}
                 alt="logo"
-                className="m-auto mx-5"
+                className="m-auto mx-5 lg:hidden"
                 onClick={() => setIsOpen(!isOpen)}
               />
             </li>
