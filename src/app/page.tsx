@@ -5,15 +5,14 @@ import Slider from "./components/Slider";
 export default function Home() {
   return (
     <div>
-      <title>Essential herbs</title>
-      <main className="relative  w-full h-[90vh] lg:w-full lg:h-[80vh] ">
+      <main className="relative  w-full h-[70vh] lg:w-full lg:h-[80vh] z-10 ">
         <Image
           src="/images/heroEssential.jpg"
           alt="hero"
           fill
-          className="opacity-100 brightness-50"
+          className="opacity-100 brightness-90"
         />
-        <div className="absolute flex text-center justify-center items-center w-full h-full mt-5">
+        <div className="absolute flex text-center justify-center items-center w-full h-full mt-5 z-10">
           <h1 className="absolute flex text-center justify-center items-center  pb-10 text-white text-lg">
             El poder del cannabis <br /> Al alcance de tus manos
           </h1>

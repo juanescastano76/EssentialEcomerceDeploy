@@ -18,7 +18,7 @@ function Slider() {
 
   const redHotProperties = () => {
     return (
-      <div className="absolute flex  h-[600px]  justify-center m-auto items-center text-center border-2 border-white w-72">
+      <div className="absolute flex  h-[80%] justify-center m-auto items-center text-center border-[1px] border-white w-2/12 z-[500] max-w-[1000px] bg-black shadow-2xl opacity-[0.99]  ">
         <button className="absolute top-5 right-10 text-white text-xl">
           X
         </button>
@@ -28,12 +28,13 @@ function Slider() {
             Sweet cherry pie
           </h3>
           <Image
-            src="/images/essentialgotero.jpeg"
+            src="/images/cogolloImg.jpeg"
             width={100}
             height={100}
             alt="red hot cookies"
+            className="m-10 w-[60%] max-w-[200px] "
           />
-          <div className="w-3/4 mx-auto justify-center items-center border-2 border-red-500 p-5 text-left">
+          <div className="w-3/4 mx-auto justify-center items-center border-2 border-red-500  text-left">
             <h4 className="text-white text-left text-xl mb-1">SABOR:</h4>
             <p className="text-white mb-5">
               Intenso con aromas fuertes y terpenos <br /> bastantes buenos
@@ -149,7 +150,7 @@ function Slider() {
       </h2>
       <Slide {...properties}>
         <div
-          className="each-slide-effect"
+          className="each-slide-effect lg:m-auto lg:w-3/12"
           onClick={() => {
             if (isOpenRed === true) {
               setIsOpenRed(false);
@@ -158,7 +159,7 @@ function Slider() {
         >
           <div
             style={{ backgroundImage: `url(${images[0]})` }}
-            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:30%_60%]"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%]  hover:cursor-pointer "
           >
             {isOpenRed ? (
               <div className=" flex justify-center items-center h-full p-10">
@@ -174,7 +175,7 @@ function Slider() {
           </div>
         </div>
         <div
-          className="each-slide-effect"
+          className="each-slide-effect lg:m-auto lg:w-3/12"
           onClick={() => {
             if (isOpenSweet === true) {
               setIsOpenSweet(false);
@@ -183,7 +184,7 @@ function Slider() {
         >
           <div
             style={{ backgroundImage: `url(${images[1]})` }}
-            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:30%_60%]"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%]  hover:cursor-pointer lg:hover:scale-[1.02]"
           >
             {isOpenSweet ? (
               <div className=" flex justify-center items-center h-full p-10">
@@ -198,10 +199,10 @@ function Slider() {
             </span>
           </div>
         </div>
-        <div className="each-slide-effect">
+        <div className="each-slide-effect lg:m-auto lg:w-3/12">
           <div
             style={{ backgroundImage: `url(${images[2]})` }}
-            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:30%_60%]"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%]  hover:cursor-pointer lg:hover:scale-[1.02] "
             onClick={() => {
               if (isOpenRedSweet === true) {
                 setIsOpenRedSweet(false);

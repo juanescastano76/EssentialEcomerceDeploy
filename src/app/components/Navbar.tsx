@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import ShoppingCart from "./ShoppingCart";
 
 const links = [
   {
@@ -11,16 +12,20 @@ const links = [
   },
   {
     label: "Productos",
-    route: "/Productos",
+    route: "/productos",
   },
   {
     label: "Contacto",
-    route: "/Contacto",
+    route: "/contacto",
   },
 ];
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navbarOpen = () => {};
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  {
+    console.log(isCartOpen);
+  }
   return (
     <div className="fixed top-0 z-[500] w-[100%]  bg-black text-white overflow-y-hidden  ">
       {!isOpen ? (
@@ -32,26 +37,27 @@ function Navbar() {
                 width={180}
                 height={200}
                 alt="logo"
-                className="h-full w-full  lg:w-52"
+                className="h-full w-full  sm:mb-2 lg:w-52 lg:mb-1"
               />
             </li>
           </ul>
 
-          <ul className="hidden lg:flex lg:items-center lg:justify-around ">
-            <li className="  flex gap-5 justify-between w-full">
+          <div className="hidden lg:flex lg:items-center  lg:w-6/12 ">
+            <ul className="flex gap-5 justify-between w-full">
               {links.map(({ label, route }) => {
                 return (
-                  <div className="flex justify-center m-10">
-                    <li key={label} className=" ">
-                      <Link href={route} className="">
-                        {label}
-                      </Link>
-                    </li>
-                  </div>
+                  <li key={label} className=" ">
+                    <Link
+                      href={route}
+                      className="hover:underline underline-offset-4 hover:decoration-cyan-500  "
+                    >
+                      {label}
+                    </Link>
+                  </li>
                 );
               })}
-            </li>
-          </ul>
+            </ul>
+          </div>
 
           <ul className=" flex justify-end w-full lg:w-52">
             <li className="flex justify-end w-fit  gap-2">
@@ -60,8 +66,10 @@ function Navbar() {
                 width={35}
                 height={35}
                 alt="logo"
-                className="m-auto "
+                className="m-auto mx-10 hover:cursor-pointer"
+                onClick={() => setIsCartOpen(!isCartOpen)}
               />
+              {isCartOpen && <ShoppingCart />}
               {/* burger menu */}
               <Image
                 src="/images/burger-menu-svgrepo-com.svg"

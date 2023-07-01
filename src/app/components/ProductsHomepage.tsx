@@ -69,25 +69,25 @@ function ProductsHomepage() {
         <h3 className="text-2xl font-bold text-center mt-2 mb-2">
           Vaporizador extremo{" "}
         </h3>
-        <div className="lg:w-[70vw] lg:mx-auto lg:flex lg:justify-center lg:gap-0 lg:mt-10 border-2 border-green-500">
+        <div className="lg:w-[50vw] lg:py-10 lg:mx-auto lg:flex lg:justify-center lg:gap-0 lg:mt-10 ">
           {/* Aside */}
-          <div className="border-2 border-green-500 lg:flex">
+          <div className="lg:flex">
             <Image
               src="/images/essentialgotero.jpeg"
               width={300}
               height={300}
               alt="vaporizador"
-              className="mx-auto lg:flex"
+              className="mx-auto w-fit lg:flex"
             />
           </div>
-          <div className="mx-auto  w-4/5 mt-3  lg:items-center lg:h-40 lg:m-auto lg:mt-20 ">
+          <div className="mx-auto  w-4/5 mt-3  lg:items-center lg:h-40  lg:mb-0 lg:mt-20 ">
             {/* text */}
-            <p className="lg:flex lg:items-center lg:h-full border-2 border-green-500">
+            <p className="lg:flex lg:items-center lg:h-full ml-5">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
               aliquid nemo assumenda asperiores odit repudiandae sapiente
               aliquam accusantium eius perspiciatis.
             </p>
-            <div className="lg:flex lg:ml-10 ">
+            <div className="pl-5 lg:flex lg:ml-5 lg:p-0">
               <AddToCartBtn />
             </div>
           </div>
