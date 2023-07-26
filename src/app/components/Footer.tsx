@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-[#050505] text-white lg:flex w-full">
+    <footer className="bg-[#050505] text-white lg:flex w-full border-t-[1px] border-white">
       <div className="lg:w-[70vw] lg:flex lg:m-auto lg:gap-10">
         <div className="w-4/5 m-auto mt-10 pt-10  lg:m-0">
           <h5 className="text-xl font-bold border-b-2 border-white pb-1">

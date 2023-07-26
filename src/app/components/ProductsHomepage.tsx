@@ -88,7 +88,7 @@ function ProductsHomepage() {
               aliquam accusantium eius perspiciatis.
             </p>
             <div className="pl-5 lg:flex lg:ml-5 lg:p-0">
-              <AddToCartBtn />
+              <AddToCartBtn buttonText="Comprar ahora" productData={null} />
             </div>
           </div>
         </div>
