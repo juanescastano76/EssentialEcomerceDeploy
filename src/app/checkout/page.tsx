@@ -168,7 +168,7 @@ function CheckoutPage() {
 }
 
 export default CheckoutPage;
-
+// hola
 // {cartProducts.map((product: ProductType) => {
 //   return (
 //     <div className="flex justify-center   items-center mx-auto w-full ">
