@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import ShoppingCart from "./ShoppingCart";
+import { usePathname } from "next/navigation";
+import { CartContext } from "../Context/store";
 
 const links = [
   {
@@ -21,11 +23,17 @@ const links = [
 ];
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const currentRoute = usePathname();
 
-  {
-    console.log(isCartOpen);
-  }
+  const openInterval = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 100);
+  };
+  // {
+  //   console.log(isOpen);
+  // }
   return (
     <div className="fixed top-0 z-[500] w-[100%]  bg-black text-white overflow-y-hidden  ">
       {!isOpen ? (
@@ -49,7 +57,11 @@ function Navbar() {
                   <li key={label} className=" ">
                     <Link
                       href={route}
-                      className="hover:underline underline-offset-4 hover:decoration-cyan-500  "
+                      className={
+                        currentRoute === route
+                          ? "underline underline-offset-[5px] decoration-cyan-600"
+                          : "hover:underline underline-offset-[5px] hover:decoration-cyan-400"
+                      }
                     >
                       {label}
                     </Link>
@@ -60,17 +72,7 @@ function Navbar() {
           </div>
 
           <ul className=" flex justify-end w-full lg:w-52">
-            <li className="flex justify-end w-fit  gap-2">
-              <Image
-                src="/images\shopping-cart-outline-svgrepo-com.svg"
-                width={35}
-                height={35}
-                alt="logo"
-                className="m-auto mx-10 hover:cursor-pointer"
-                onClick={() => setIsCartOpen(!isCartOpen)}
-              />
-              {isCartOpen && <ShoppingCart />}
-              {/* burger menu */}
+            <li className="items-center flex ">
               <Image
                 src="/images/burger-menu-svgrepo-com.svg"
                 width={30}
@@ -80,11 +82,24 @@ function Navbar() {
                 onClick={() => setIsOpen(!isOpen)}
               />
             </li>
+            {isCartOpen && <ShoppingCart />}
+            {/* burger menu */}
+            <li className="flex justify-end  gap-2">
+              <Image
+                src="/images\shopping-cart-outline-svgrepo-com.svg"
+                width={35}
+                height={35}
+                alt="logo"
+                className="  mx-5  hover:cursor-pointer"
+                onClick={() => setIsCartOpen(!isCartOpen)}
+              />
+            </li>
           </ul>
         </nav>
       ) : (
+        // mobile menu
         <nav className="overflow-hidden">
-          <ul className="flex  top-0   justify-center w-[100%] h-[100vh] bg-black text-white overflow-hidden">
+          <ul className="flex  top-0 justify-center w-[100%] h-[100vh] bg-black text-white overflow-hidden">
             <li>
               <Image
                 src="/images/blanco.png"
@@ -100,7 +115,7 @@ function Navbar() {
                 width={30}
                 height={50}
                 alt="logo"
-                className="flex absolute right-10 top-10"
+                className="flex absolute right-6 top-10 "
                 onClick={() => setIsOpen(!isOpen)}
               />
             </li>
