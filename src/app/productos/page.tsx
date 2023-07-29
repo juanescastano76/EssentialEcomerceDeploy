@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import AddToCartBtn from "../components/ReusableComponents/AddToCartBtn";
 import { ProductType } from "@/types";
-// FETCHING PRODUCTS
+
 import { fetchSupabase } from "./components/fetchSupabase";
 
 async function ProductsPage() {
