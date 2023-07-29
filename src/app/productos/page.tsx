@@ -4,7 +4,6 @@ import AddToCartBtn from "../components/ReusableComponents/AddToCartBtn";
 import { ProductType } from "@/types";
 // FETCHING PRODUCTS
 import { fetchSupabase } from "./components/fetchSupabase";
-import { useSelector } from "react-redux";
 
 async function ProductsPage() {
   const finalProducts = await fetchSupabase();
