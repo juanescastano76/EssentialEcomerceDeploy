@@ -4,6 +4,21 @@ const mpKey = process.env.MERCADOPAGO_ACCESS_KEY;
 mercadopago.configure({
   access_token: mpKey,
 });
+export interface ProductType {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  imgUrl: string;
+  quantity: number;
+}
+
+type ItemType = {
+  id: number;
+  title: string;
+  unit_price: number;
+  quantity: number;
+};
 
 export async function GET(request: Request) {
   return new Response("h1");
@@ -27,7 +42,7 @@ export async function POST(req: Request) {
   });
 
   let preference = {
-    items: [],
+    items: [] as ItemType[],
     payment_methods: {
       excluded_payment_types: [
         {
@@ -48,8 +63,8 @@ export async function POST(req: Request) {
   };
   let resInitPoint = null;
   let resId = null;
-  cartProducts.map((product: any) => {
-    const totalItems = [
+  cartProducts.map((product: ProductType) => {
+    const totalItems: ItemType[] = [
       {
         id: product.id,
         title: product.title,
