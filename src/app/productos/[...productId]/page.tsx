@@ -14,15 +14,17 @@ export const generateMetadata = async ({
   params: { productId },
 }: Params): Promise<Metadata> => {
   const productData = await fetchSingleProduct(productId);
+  console.log(productData);
+
   return {
-    title: productData[0].title,
-    description: productData[0].description,
+    title: productData[0]?.title,
+    description: productData[0]?.description,
   };
 };
 
 async function SingleProductPage({ params: { productId } }: Params) {
   const productData = await fetchSingleProduct(productId);
-
+  console.log(productData);
   if (productData.length === 0) {
     return (
       <p className="text-white flex items-center justify-center text-6xl h-[50vh] ] ">
@@ -41,7 +43,7 @@ async function SingleProductPage({ params: { productId } }: Params) {
               </h1>
               <div className="flex justify-center lg:flex-row  bg-[#020202] border-[0.5px] border-white rounded-lg cursor-pointer">
                 <img
-                  src={`https:/i.ibb.co/k4TjZ1N/goteropng.png`}
+                  src="https:/i.ibb.co/k4TjZ1N/goteropng.png"
                   alt={item.title}
                   width={""}
                   height={""}

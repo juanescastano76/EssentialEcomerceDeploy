@@ -12,15 +12,22 @@ import Link from "next/link";
 function ShoppingCart() {
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
   const cartProducts = useSelector((state: any) => state.cart.cartProducts);
-
+  // Añadir productosa l localsotrage
   const dispatch = useDispatch();
 
+  const totalPrice = () => {
+    let total = 0;
+    cartProducts.forEach((product: ProductType) => {
+      total += product.price * product.quantity;
+    });
+    return total.toFixed(3);
+  };
   return (
     <div
       className={
         closed
           ? "hidden"
-          : "fixed  w-full h-full max-h-[800px]  overflow-y-auto bg-white  border-l-2 border-b-2 border-black shadow-lg z-[500] text-black lg:right-0  lg:max-w-[600px]  lg:max-h-[700px]   "
+          : "fixed  w-full h-full  overflow-y-auto bg-white  border-l-2 border-b-2 border-black shadow-lg z-[500] text-black lg:right-0  lg:max-w-[450px]   "
       }
     >
       <div className="flex justify-end p-1 w-full">
@@ -34,26 +41,29 @@ function ShoppingCart() {
       </div>
 
       <div>
-        <h5 className="text-center font-bold text-lg mt-1">
+        <h5 className="text-center font-bold text-xl mt-1">
           Carrito de compras
         </h5>
       </div>
 
       {/*Products display  */}
-      <div className="flex flex-col justify-center items-center overflow-auto border-2 border-black max-h-[70%] p-4">
+      <div className="flex  flex-col justify-center items-center overflow-auto  max-h-[70%] p-4 w-[90%] mx-auto h-max">
         {cartProducts.map((product: ProductType) => {
           return (
-            <div className="flex justify-center   items-center mx-auto w-full ">
+            <div
+              className="flex justify-center   items-center mx-auto w-full py-4"
+              key={product.id}
+            >
               <Image
                 src="/images/goteropng.png"
                 width={50}
                 height={100}
                 alt="Gotero"
-                className="w-[25%] max-h-[110px] max-w-[120px] "
+                className="w-[75px] max-h-[110px] max-w-[120px] "
               />
 
-              <div className="flex flex-col ">
-                <h5 className="text-sm ">{product.title}</h5>
+              <div className="flex flex-col  w-72 " key={product.id}>
+                <h5 className="text-sm overflow-hidden">{product.title}</h5>
                 <div className="flex items-center gap-2">
                   <span className="text-sm">Precio</span>
                   <p className="text-sm">{product.price * 1000}</p>
@@ -65,9 +75,12 @@ function ShoppingCart() {
               </div>
               <div className="flex gap-10">
                 <img
-                  className="ml-5 w-[19px] cursor-pointer lg:w-[22px] lg:h-[22px] lg:ml-[60px]"
+                  className="ml-1 w-[19px] cursor-pointer lg:w-[22px] lg:h-[22px] lg:ml-[30px]"
                   src="/images/bin.svg"
                   alt="Eliminar del carrito"
+                  onClick={() => {
+                    dispatch(removeFromCart(product));
+                  }}
                 />
               </div>
             </div>
@@ -76,14 +89,18 @@ function ShoppingCart() {
       </div>
 
       {/* End of products display */}
-      <div className="absolute bottom-0 w-full p-1">
-        <div className="lg:w-[90%] mx-auto lg:my-10">
-          <p>Total</p>
-          <p>$200</p>
+      <div className="absolute bottom-0 w-full p-1 lg:w-[90%]  flex flex-col left-0 right-0 mx-auto ">
+        <div className="mx-2 flex justify-between lg:flex flex-row gap-10  border-gray-200 border-b-[1px] pb-1  px-1 ">
+          <p className="text-lg">Envio:</p>
+          <p className="font-semibold text-xl">Envio gratiuto</p>
+        </div>
+        <div className="mx-2 flex mb-2  justify-between lg:flex flex-row gap-10 border-gray-200 border-b-[1px] pb-1 px-1">
+          <p className="text-lg">Total</p>
+          <p className="font-semibold text-xl">{totalPrice()}</p>
         </div>
         <div>
           <button
-            className=" text-red-600 underline border-red-700 "
+            className=" text-red-600 underline border-red-700  mx-3"
             onClick={() => {
               dispatch(resetCart());
             }}
@@ -92,8 +109,13 @@ function ShoppingCart() {
           </button>
         </div>
         <div className="flex justify-between w-full  ">
-          <Link href={"checkout"} className="w-full">
-            <button className="bg-blue-500 border-[2px] border-black text-white w-full h-[50px] font-bold hover:bg-blue-600 hover:text-black transition-all ease-in delay-50 ">
+          <Link href="/checkout" className="w-full pb-2">
+            <button
+              className="bg-blue-500 border-[2px] border-black text-white w-full h-[50px] font-bold hover:bg-blue-600 hover:text-black transition-all ease-in delay-50  "
+              onClick={() => {
+                setIsCartOpen(false);
+              }}
+            >
               Proceder al checkout
             </button>
           </Link>

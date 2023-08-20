@@ -24,7 +24,7 @@ function Slider() {
         </button>
 
         <div className="relative flex flex-col justify-center items-center   w-3/4 mx-auto ">
-          <h3 className="text-center justify-center mx-auto   text-white items-center text-2xl">
+          <h3 className="text-center justify-center mx-auto   text-white items-center text-2xl lg:text-4xl">
             Sweet cherry pie
           </h3>
           <Image
@@ -32,16 +32,16 @@ function Slider() {
             width={100}
             height={100}
             alt="red hot cookies"
-            className="m-10 w-[60%] max-w-[200px] "
+            className="m-10 w-[60%] lg:w-[80%] max-h-[230px] max-w-[200px] "
           />
-          <div className="w-3/4 mx-auto justify-center items-center border-2 border-red-500  text-left">
-            <h4 className="text-white text-left text-xl mb-1">SABOR:</h4>
+          <div className="w-3/4 mx-auto justify-center items-center  text-left lg:mr-10 lg:text-lg">
+            <h4 className="text-white text-left text-xl mb-1 ">SABOR:</h4>
             <p className="text-white mb-5">
-              Intenso con aromas fuertes y terpenos <br /> bastantes buenos
+              Intenso con aromas fuertes y terpenos bastantes buenos
             </p>
             <h4 className="text-white text-left text-xl mb-1">EXPERIENCIA:</h4>
             <p className="text-white">
-              Fuerte y pesado <br /> sube el humor y aumenta la carisma
+              Fuerte y pesado sube el humor y aumenta la carisma
             </p>
           </div>
         </div>
@@ -50,30 +50,30 @@ function Slider() {
   };
   const sweetCherryProperties = () => {
     return (
-      <div className="absolute flex  h-[500px]  justify-center m-auto items-center text-center z-50 ">
-        <div>
-          <button className="absolute top-5 right-10 text-white text-xl  ">
-            X
-          </button>
-        </div>
+      <div className="absolute flex  h-[80%] justify-center m-auto items-center text-center border-[1px] border-white w-2/12 z-[500] max-w-[1000px] bg-black shadow-2xl opacity-[0.99]  ">
+        <button className="absolute top-5 right-10 text-white text-xl">
+          X
+        </button>
+
         <div className="relative flex flex-col justify-center items-center   w-3/4 mx-auto ">
-          <h3 className="text-center justify-center mx-auto   text-white items-center text-2xl">
+          <h3 className="text-center justify-center mx-auto   text-white items-center text-2xl lg:text-4xl">
             Sweet cherry pie
           </h3>
           <Image
-            src="/images/essentialgotero.jpeg"
+            src="/images/cogolloImg.jpeg"
             width={100}
             height={100}
             alt="red hot cookies"
+            className="m-10 w-[60%] lg:w-[80%] max-h-[230px] max-w-[200px] "
           />
-          <div className="w-3/4 mx-auto justify-center items-center border-2 border-red-500 p-5 text-left">
-            <h4 className="text-white text-left text-xl mb-1">SABOR:</h4>
+          <div className="w-3/4 mx-auto justify-center items-center  text-left lg:mr-10 lg:text-lg">
+            <h4 className="text-white text-left text-xl mb-1 ">SABOR:</h4>
             <p className="text-white mb-5">
-              Intenso con aromas fuertes y terpenos <br /> bastantes buenos
+              Intenso con aromas fuertes y terpenos bastantes buenos
             </p>
             <h4 className="text-white text-left text-xl mb-1">EXPERIENCIA:</h4>
             <p className="text-white">
-              Fuerte y pesado <br /> sube el humor y aumenta la carisma
+              Fuerte y pesado sube el humor y aumenta la carisma
             </p>
           </div>
         </div>
@@ -82,28 +82,30 @@ function Slider() {
   };
   const sweetXHotProperties = () => {
     return (
-      <div className="absolute flex  h-[500px]  justify-center m-auto items-center text-center  ">
-        <button className="absolute top-0 right-10  text-white text-2xl">
+      <div className="absolute flex  h-[80%] justify-center m-auto items-center text-center border-[1px] border-white w-2/12 z-[500] max-w-[1000px] bg-black shadow-2xl opacity-[0.99]  ">
+        <button className="absolute top-5 right-10 text-white text-xl">
           X
         </button>
+
         <div className="relative flex flex-col justify-center items-center   w-3/4 mx-auto ">
-          <h3 className="text-center justify-center mx-auto   text-white items-center text-2xl">
-            Sweet cherry pie
+          <h3 className="text-center justify-center mx-auto   text-white items-center text-2xl lg:text-4xl">
+            Sweet x Hot
           </h3>
           <Image
-            src="/images/essentialgotero.jpeg"
+            src="/images/cogolloImg.jpeg"
             width={100}
             height={100}
             alt="red hot cookies"
+            className="m-10 w-[60%] lg:w-[80%] max-h-[230px] max-w-[200px] "
           />
-          <div className="w-3/4 mx-auto justify-center items-center border-2 border-red-500 p-5 text-left">
-            <h4 className="text-white text-left text-xl mb-1">SABOR:</h4>
+          <div className="w-3/4 mx-auto justify-center items-center  text-left lg:mr-10 lg:text-lg">
+            <h4 className="text-white text-left text-xl mb-1 ">SABOR:</h4>
             <p className="text-white mb-5">
-              Intenso con aromas fuertes y terpenos <br /> bastantes buenos
+              Intenso con aromas fuertes y terpenos bastantes buenos
             </p>
             <h4 className="text-white text-left text-xl mb-1">EXPERIENCIA:</h4>
             <p className="text-white">
-              Fuerte y pesado <br /> sube el humor y aumenta la carisma
+              Fuerte y pesado sube el humor y aumenta la carisma
             </p>
           </div>
         </div>
@@ -184,7 +186,7 @@ function Slider() {
         >
           <div
             style={{ backgroundImage: `url(${images[1]})` }}
-            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%]  hover:cursor-pointer lg:hover:scale-[1.02]"
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%]  hover:cursor-pointer "
           >
             {isOpenSweet ? (
               <div className=" flex justify-center items-center h-full p-10">
@@ -202,7 +204,7 @@ function Slider() {
         <div className="each-slide-effect lg:m-auto lg:w-3/12">
           <div
             style={{ backgroundImage: `url(${images[2]})` }}
-            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%]  hover:cursor-pointer lg:hover:scale-[1.02] "
+            className="h-screen bg-contain  bg-no-repeat bg-center lg:bg-[length:100%_70%] hover:cursor-pointer "
             onClick={() => {
               if (isOpenRedSweet === true) {
                 setIsOpenRedSweet(false);
