@@ -88,7 +88,6 @@ export async function POST(req: Request) {
       console.log(resBody);
       resId = resBody.id;
       global.id = resBody.body.id;
-      console.log(global.id);
     })
     .catch(function (error: any) {
       console.log(error);
