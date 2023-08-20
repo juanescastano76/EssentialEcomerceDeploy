@@ -19,6 +19,9 @@ type ItemType = {
   unit_price: number;
   quantity: number;
 };
+declare global {
+  var id: string;
+}
 
 export async function GET(request: Request) {
   return new Response("h1");
@@ -85,7 +88,6 @@ export async function POST(req: Request) {
       console.log(resBody);
       resId = resBody.id;
       global.id = resBody.body.id;
-      console.log(global.id);
     })
     .catch(function (error: any) {
       console.log(error);
