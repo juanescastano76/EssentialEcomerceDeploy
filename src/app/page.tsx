@@ -6,15 +6,15 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <main className="relative  w-full h-[70vh] lg:w-full lg:h-[80vh] z-10 ">
+      <main className="relative  w-full h-[70vh] lg:w-full lg:h-[90dvh] z-10 ">
         <Image
-          src="/images/heroEssential.jpg"
+          src="/images/heroEssential2.jpg"
           alt="hero"
           fill
-          className="opacity-100 brightness-90"
+          className="opacity-100 brightness-[0.4] object-left"
         />
         <div className="absolute flex text-center justify-center items-center w-full h-full mt-5 z-10">
-          <h1 className="absolute flex text-center justify-center items-center  pb-10 text-white text-2xl font-[400] ">
+          <h1 className="absolute flex text-center justify-center items-center  pb-10 text-white text-2xl font-[600]">
             El poder del cannabis <br /> Al alcance de tus manos
           </h1>
           <Link
