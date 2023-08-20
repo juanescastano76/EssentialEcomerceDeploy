@@ -19,6 +19,9 @@ type ItemType = {
   unit_price: number;
   quantity: number;
 };
+declare global {
+  var id: string;
+}
 
 export async function GET(request: Request) {
   return new Response("h1");
