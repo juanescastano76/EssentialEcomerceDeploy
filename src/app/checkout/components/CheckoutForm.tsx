@@ -42,8 +42,8 @@ function CheckoutForm() {
       userInfo: data,
       cartProducts,
     };
-
-    fetch("http://localhost:3000/api/post", {
+    // Arreglar el hardcode de link
+    fetch("/api/post", {
       method: "POST",
       body: JSON.stringify(sendData),
       headers: {

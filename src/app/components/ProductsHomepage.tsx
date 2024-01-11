@@ -8,7 +8,8 @@ import SliderMainPage from "./SliderMainPage";
 import Link from "next/link";
 
 async function ProductsHomepage(): Promise<JSX.Element> {
-  const productsData = await fetchSupabase("productos");
+  const productsData = await fetchSupabase();
+  console.log(productsData);
 
   return (
     <SliderMainPage>

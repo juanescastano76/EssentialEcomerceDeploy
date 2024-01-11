@@ -36,6 +36,7 @@ async function SingleProductPage({ params: { productId } }: Params) {
     <main>
       <article className="flex items-center justify-center m-auto  min-h-[800px] h-[100dvh] lg:w-[70vw] mt-[96px]  ">
         {productData.map((item: ProductType) => {
+          console.log(item?.imgUrl);
           return (
             <div className="flex  items-center m-auto w-[80vw] text-center flex-col justify-center gap-20 lg:flex-row   ">
               <h1 className="text-white text-center text-2xl font-bold lg:absolute lg:top-[25%]">
@@ -43,7 +44,7 @@ async function SingleProductPage({ params: { productId } }: Params) {
               </h1>
               <div className="flex justify-center lg:flex-row  bg-[#020202] border-[0.5px] border-white rounded-lg cursor-pointer">
                 <img
-                  src="https:/i.ibb.co/k4TjZ1N/goteropng.png"
+                  src={item?.imgUrl}
                   alt={item.title}
                   width={""}
                   height={""}
@@ -54,7 +55,7 @@ async function SingleProductPage({ params: { productId } }: Params) {
                 <h2 className="text-white text-left  mb-1 text-xl  font-light lg:text-2xl ">
                   Detalles del producto
                 </h2>
-                <p className="text-white text-left lg:text-xl capitalize">
+                <p className="text-white text-left lg:text-xl capitalize lg:flex-wrap lg:max-w-md">
                   {item.description}
                 </p>
                 {/* <div className="flex gap-10 justify-center"> */}
