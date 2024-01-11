@@ -5,11 +5,12 @@ export const fetchSingleProduct: any = async (productId: number) => {
     // .select("*")
     // .limit(productId);
     .from("products")
-    .select("*")
+    .select("")
     .eq("id", productId);
   if (error) {
     return error;
   }
+  console.log(producto);
 
   return producto;
 };
